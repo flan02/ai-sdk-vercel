@@ -2,6 +2,10 @@
 
 Repo with content about AI Vercel SDK features
 
+## Documentation
+
+[go](https://ai-sdk.dev/docs/introduction)
+
 ## Useful for
 
 - Core (backend tasks)
@@ -18,3 +22,7 @@ npx skills update
 ## OpenAI Platform
 
 [website](https://platform.openai.com/chat)
+
+## More info to learn about agents and ai
+
+[website](https://www.aihero.dev/)
