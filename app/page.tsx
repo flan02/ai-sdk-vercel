@@ -5,6 +5,7 @@ import { CodeSection } from "@/components/code-section"
 import { ProvidersSection } from "@/components/providers-section"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -12,6 +13,10 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <div className="mb-12 w-[80%] mx-auto flex space-x-6">
+          <Link href='/stream-text-to-ui' target="_blank" className="underline underline-offset-2 text-emerald-200">Stream Text to UI</Link>
+          <Link href='/tool-calling' target="_blank" className="underline underline-offset-2 text-emerald-200">Tool Calling</Link>
+        </div>
         <ProvidersSection />
         <FeaturesSection />
         <CodeSection />
