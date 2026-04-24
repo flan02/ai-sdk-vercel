@@ -2,9 +2,7 @@ import type { UIDataTypes, UIMessagePart, UITools } from 'ai';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-export const Wrapper = (props: {
-  children: React.ReactNode;
-}) => {
+export const Wrapper = (props: { children: React.ReactNode }) => {
   return (
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
       {props.children}
@@ -12,13 +10,7 @@ export const Wrapper = (props: {
   );
 };
 
-export const Message = ({
-  role,
-  parts,
-}: {
-  role: string;
-  parts: UIMessagePart<UIDataTypes, UITools>[];
-}) => {
+export const Message = ({ role, parts }: { role: string; parts: UIMessagePart<UIDataTypes, UITools>[] }) => {
   const prefix = role === 'user' ? 'User: ' : 'AI: ';
 
   const text = parts

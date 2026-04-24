@@ -6,6 +6,20 @@ Repo with content about AI Vercel SDK features
 
 [go](https://ai-sdk.dev/docs/introduction)
 
+## AI Google Studio
+
+[dashboard](https://aistudio.google.com/apps)
+
+## ShadCN alternatives
+
+- [shadcn community](https://ui.shadcn.com/docs/directory)
+- [futuristic](https://thegridcn.com/)
+- [audio](https://ui.elevenlabs.io/)
+- [mapas](https://mapcn.dev)
+- [shadcn + motion](https://ui.tripled.work)
+- [shadcn + themes](https://tweakcn.com)
+- [shadcn + neon](https://glitchcn-ui.vercel.app/)
+
 ## Useful for
 
 - Core (backend tasks)

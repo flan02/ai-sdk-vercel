@@ -1,3 +1,4 @@
+import { CustomUIMessage } from '@/tools';
 import type { UIDataTypes, UIMessagePart, UITools } from 'ai';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -15,23 +16,31 @@ export const Message = ({
   parts,
 }: {
   role: string;
-  parts: UIMessagePart<UIDataTypes, UITools>[];
+  parts: CustomUIMessage['parts'] // * Contains custom tools added to the UI message parts
+  // parts: UIMessagePart<UIDataTypes, UITools>[];
 }) => {
   const prefix = role === 'user' ? 'User: ' : 'AI: ';
 
   const text = parts
-    .map((part) => {
+    .map((part, index) => {
       if (part.type === 'text') {
-        return part.text;
+        return (
+          <div key={index} className="prose prose-invert my-6">
+            <ReactMarkdown>{prefix + part.text}</ReactMarkdown>
+          </div>
+        );
+      }
+      // ? NOTE: Note how the tool-writeFile part is type-safe. Beautiful
+      if (part.type === 'tool-writeFile') {
+        return (
+          <div key={index} className="bg-slate-800/20 border border-slate-200 rounded p-3 text-sm">
+            <div className='font-semibold mb-1 text-blue-300'>{`**Tool Call:** Write to file \`${part.input?.path}\``}</div>
+          </div>
+        )
       }
       return '';
     })
     .join('');
-  return (
-    <div className="prose prose-invert my-6">
-      <ReactMarkdown>{prefix + text}</ReactMarkdown>
-    </div>
-  );
 };
 
 export const ChatInput = ({

@@ -10,6 +10,11 @@ import * as fsTools from './file-system-functionality';
 import { createDirectorySchema, deleteSchema, existsSchema, listDirectorySchema, readFileSchema, searchFilesSchema, writeFileSchema } from '@/zod/tool-calling';
 import { createOpenAI } from '@ai-sdk/openai';
 
+import { tools as customTools } from '@/tools';
+
+// * NOTE: If we define multiple tools, we can export them as an object and then pass them to the streamText function
+// It works and simplifies the code in streamText fc
+// ? tools: { ...customTools }
 
 const openrouter = createOpenAI({
   baseURL: 'https://openrouter.ai/api/v1',
@@ -21,7 +26,7 @@ export const POST = async (req: Request): Promise<Response> => {
   const body: { messages: UIMessage[] } = await req.json();
   const { messages } = body;
 
-  // ? Only if I wanna send the last message to the model
+  // ? Only if I wanna send the last message to the model. Useful when we work with useCompletion()
   // const lastMessage = messages[messages.length - 1];
 
   // if (!lastMessage) {
