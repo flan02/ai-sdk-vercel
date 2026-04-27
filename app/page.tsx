@@ -14,8 +14,10 @@ export default function Home() {
       <main>
         <HeroSection />
         <div className="mb-12 w-[80%] mx-auto flex space-x-6">
-          <Link href='/stream-text-to-ui' target="_blank" className="underline underline-offset-2 text-emerald-200">Stream Text to UI</Link>
-          <Link href='/tool-calling' target="_blank" className="underline underline-offset-2 text-emerald-200">Tool Calling</Link>
+          <Link href='/stream-text-to-ui' target="_blank" className="underline underline-offset-2 text-emerald-100">Stream Text to UI</Link>
+          <Link href='/tool-calling' target="_blank" className="underline underline-offset-2 text-emerald-100">{`Tool Calling (naive agent)`}</Link>
+          <Link href='/images-describing' target="_blank" className="underline underline-offset-2 text-emerald-100">Image Description</Link>
+          <Link href='/message-parts' target="_blank" className="underline underline-offset-2 text-emerald-100">Message Parts</Link>
         </div>
         <ProvidersSection />
         <FeaturesSection />

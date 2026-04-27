@@ -48,3 +48,8 @@ export const searchFilesSchema = z.object({
     .string()
     .describe('The pattern to search for'),
 })
+
+export const generateImageScrema = z.object({
+  prompt: z.string().describe('Descripción visual detallada para el generador de imágenes.'),
+  aspectRatio: z.enum(['1:1', '16:9', '9:16']).default('1:1').optional()
+})

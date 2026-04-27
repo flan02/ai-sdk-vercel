@@ -39,10 +39,7 @@ function getRelativePath(fullPath: string): string {
 /**
  * TODO: Write content to a file
  */
-export function writeFile(
-  filePath: string,
-  content: string,
-): { success: boolean; message: string; path: string } {
+export function writeFile(filePath: string, content: string): { success: boolean; message: string; path: string } {
   try {
     ensureBaseDir();
     const fullPath = validatePath(filePath);
@@ -58,7 +55,7 @@ export function writeFile(
     return {
       success: true,
       message: `File written successfully: ${getRelativePath(fullPath)}`,
-      path: getRelativePath(fullPath),
+      path: getRelativePath(fullPath)
     };
   } catch (error) {
     return {

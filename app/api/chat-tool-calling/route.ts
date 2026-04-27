@@ -11,7 +11,6 @@ import { createDirectorySchema, deleteSchema, existsSchema, listDirectorySchema,
 import { createOpenAI } from '@ai-sdk/openai';
 
 import { tools as customTools } from '@/tools';
-
 // * NOTE: If we define multiple tools, we can export them as an object and then pass them to the streamText function
 // It works and simplifies the code in streamText fc
 // ? tools: { ...customTools }
@@ -41,7 +40,7 @@ export const POST = async (req: Request): Promise<Response> => {
   // return new Response('ok');
 
   const result = streamText({
-    model: google('gemini-flash-lite-latest'),//openrouter('google/gemma-4-26b-a4b-it:free'),
+    model: google('gemma-4-31b-it'), //'gemini-flash-lite-latest'
     messages: convertedMessages, //cleanMessages as any
     system: `
       You are a helpful assistant that can use a sandboxed file system to create, edit and delete files.

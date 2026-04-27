@@ -28,6 +28,7 @@ export const Message = ({ role, parts }: { role: string; parts: UIMessagePart<UI
   );
 };
 
+
 export const ChatInput = ({
   input,
   onChange,
